@@ -56,3 +56,12 @@ Ended up with this:
 ```
 \A(?<minimum>\d{1,2})-(?<maximum>\d{1,2})\ (?<given_letter>[a-z]):\ (?<password>[a-z]+?)\z
 ```
+
+Following the plan, everything worked:
+
+```
+$ ruby check_passwords.rb input.txt
+Found 1000 password-with-policy lines
+Every line matched
+'569' passwords are valid
+```
