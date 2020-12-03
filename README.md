@@ -38,3 +38,31 @@ bundle install
 cd 2020/01
 ruby add_up_expense_report.rb input.txt
 ```
+
+Goal: Find the product of the two entries in the input that sum to 2020.
+
+First time I ran it gave me a bunch of output like this:
+```
+...
+1988 + 1248 = 19881248
+1988 + 1746 = 19881746
+1988 + 1987 = 19881987
+1988 + 1963 = 19881963
+1988 + 20 = 198820
+1988 + 1575 = 19881575
+1988 + 1827 = 19881827
+...
+```
+
+I forgot to convert to Integers, fuck.
+
+Second time, after integer conversion, it worked:
+
+```
+$ ruby add_up_expense_report.rb input.txt
+The first number is '317'
+The second number is '1703'
+Their product is '539851'.
+```
+
+But I exit early, I wonder if there is more than one valid combination.
