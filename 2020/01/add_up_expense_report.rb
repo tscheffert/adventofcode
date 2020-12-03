@@ -6,7 +6,7 @@ module AddUpExpenseReport
   def self.perform(args:)
     input_file = args[0]
 
-    raise "Input file not supplied" if input_file.blank?
+    raise 'Input file not supplied' if input_file.blank?
     raise "File doesn't exist" if !File.exist?(input_file)
 
     numbers = File.readlines(input_file, chomp: true)
@@ -26,9 +26,7 @@ module AddUpExpenseReport
         sum == 2020
       end
 
-      if extra.present?
-        raise "Found more than one number that sums to 2020 with #{first}"
-      end
+      raise "Found more than one number that sums to 2020 with #{first}" if extra.present?
 
       if second.present?
         # puts "The first number is '#{first}'\nThe second number is '#{second}'\nTheir product is '#{first * second}'."
@@ -42,20 +40,19 @@ module AddUpExpenseReport
     end
 
     if candidates.length == 1
-      puts "Got the expected number of pairs."
+      puts 'Got the expected number of pairs.'
       puts "The first number is '#{first}'\nThe second number is '#{second}'\nTheir product is '#{first * second}'."
     end
 
     if candidates.length > 1
-      puts "Got more than the expected number of pairs."
-      puts "Here are all the candidates:"
+      puts 'Got more than the expected number of pairs.'
+      puts 'Here are all the candidates:'
       candidates.each do |(first, second)|
         puts "#{first} + #{second} = #{first + second}"
         puts "#{first} * #{second} = #{first * second}"
-        puts "-----------"
+        puts '-----------'
       end
     end
-
   end
 
 end
