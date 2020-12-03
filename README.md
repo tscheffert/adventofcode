@@ -66,3 +66,16 @@ Their product is '539851'.
 ```
 
 But I exit early, I wonder if there is more than one valid combination.
+
+There is only one valid pair, but I sum every number with every other number, so we get a match on both sides:
+```
+$ ruby add_up_expense_report.rb input.txt
+Got more than the expected number of pairs.
+Here are all the candidates:
+317 + 1703 = 2020
+317 * 1703 = 539851
+-----------
+1703 + 317 = 2020
+1703 * 317 = 539851
+-----------
+```
